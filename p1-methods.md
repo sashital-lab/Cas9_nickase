@@ -2,7 +2,7 @@
 
 The input is a fastq file. The R2 reads (reverse reads) have a 20bp cas sequence that contains up to 10 mis-matches. The flanking sequence is constant and needs to be trimmed before processing this 20bp sequence. Once 20 bp sequence is extracted, the number of mis-matches, as compared to the original sequence needs to be computed and the frequency of nucleotides at each position needs to be calculated.
 
-### Experiment
+## Experiment
 
 Three different libraries were prepared:
 
@@ -17,7 +17,7 @@ Design of the oligos were as follows
 Fig1: Sequence features.
 
 
-### Data
+## Data
 
 Data was securely `rsync`ed from the PI's LSS server to the Condo cluster. The files were organized based on library name and then Cas12a variant.
 
@@ -52,7 +52,7 @@ done
 
 The html files are also available in this repo.
 
-### Processing files
+## Processing files
 
 For each of three library, respective query sequence was created as separate files.
 
