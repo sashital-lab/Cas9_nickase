@@ -64,6 +64,12 @@ For each of three library, respective query sequence was created as separate fil
 CGGTTCGCGTGGATTAAAGG
 ```
 
+`query.fa` for `KMlib002`
+
+```
+>KMlib002
+GGAAATTAGGTGCGCTTGGC
+```
 
 `query.fa` for `KMlib003`
 
@@ -78,11 +84,15 @@ GGCGCGGGCCGCTCGCTCTA
 >KMlib001
 ATTAAAAATGAGCTTTTCTA
 ```
+**These methods have been modified, as there was a bug in Jellyfish that was preventing certain even number kmers in the output**
+<details>
+  <summary>Old methods</summary>
 Also, for each library, separate processing script was prepared and was run. The scripts in the repo.
 
 1. [KMlib001](process_KMlib001.sh)
-2. [KMlib003](process_KMlib003.sh)
-3. [KMlib003](process_KMlib004.sh)
+2. [KMlib002](process_KMlib002.sh)
+3. [KMlib003](process_KMlib003.sh)
+4. [KMlib003](process_KMlib004.sh)
 
 
 The files were then collated:
@@ -96,5 +106,5 @@ for f in *R2_pos-summary.txt; do
   cat $f;
 done > frequency-table.txt
 ```
-
 The files were then transferred to Excel and formatted for easy reading.
+</details>
