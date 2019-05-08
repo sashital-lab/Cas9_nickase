@@ -18,6 +18,12 @@ Design of the oligos were as follows
 Fig1: Sequence features.
 
 
+## Workflow
+
+
+
+![figure1](assets/20190506_Dipa_LC.png)
+
 ## Data
 
 Data was securely `rsync`ed from the PI's [LSS](https://researchit.las.iastate.edu/large-scale-storage-lss) server to the Condo cluster. The files were organized based on library name and then Cas12a variant.
