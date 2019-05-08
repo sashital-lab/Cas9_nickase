@@ -1,0 +1,1030 @@
+for f in *.fq; do ../process_KM01.sh $f; done &> stdout.txt
+lt
+../cleanup-process-files.sh 
+lt
+less stdout.txt 
+cd st
+cd mismatches-table/
+lt
+less N-KMlib001-control_mm-stats.txt
+for f in *.fq; do ../process_KM04.sh $f; done &>stdout.txt
+lt
+../cleanup-process-files.sh 
+lt
+cat stdout.txt 
+lt
+cd mismatches-table/
+lt
+cd ../mismatches-table/
+lt
+cat *_mm-stats.txt |sort |uniq > uniq-mm.txt
+cat *_mm-stats.txt |sort |uniq > uniq-mm.txt
+less uniq-mm.txt
+wc -l uniq-mm.txt
+less uniq-mm.txt 
+cat *_mm-stats.txt |sort |uniq > uniq-mm.txt
+awk '$2==0' uniq-mm.txt
+awk '$2==1' uniq-mm.txt
+awk '$2==1' uniq-mm.txt |wc -l
+lt
+cd ..
+lt
+cd frequency-table/
+lt
+lt
+cd ../
+lt
+cd frequency-table/
+lt
+cd ../frequency-table/
+lt
+cd -
+lt
+wc -l uniq-mm.txt 
+cd ../
+lt
+cd frequency-table/
+lt
+wc -l list-of-unique-fragments.txt
+wc -l mismathces.txt
+awk '$2==1' mismathces.txt |wc -l
+rm mismathces.txt paired.list 
+lt
+cd ../../
+lt
+cd KM0
+lt
+cd KM01/
+lt
+for f in *.fq; do ../process_KM03.sh $f; done &>stdout.txt
+cd mismatches-table/
+lt
+lt
+../cleanup-process-files.sh 
+cd mismatches-table/
+lt
+cd ../
+lt
+cd frequency-table/
+lt
+cd ../KM02
+cd ../../KM02/
+lt
+cd frequency-table/
+lt
+cat *_mm-stats.txt |sort |uniq > uniq-mm.txt
+lt
+awk '$2==1' uniq-mm.txt |wc -l
+cd ../
+lt
+cd frequency-table/
+lt
+ls
+cd ../mismatches-table/
+lt
+nano ../../cleanup-process-files.sh 
+lt
+mv uniq-mm.txt ../frequency-table/
+lt
+cd ../
+cd frequency-table/
+lt
+cat ../../cleanup-full-table.sh 
+nano ../../cleanup-process-files.sh 
+lt
+cat ../../cleanup-full-table.sh 
+qsa
+nano ../../process_KM0
+nano ../../cleanup-process-files.sh 
+nano ../../makefull.sh 
+lt
+mkdir original
+mv *_freq.txt ./original/
+mv full* ././original/
+lt
+wc -l *
+lt
+head list-of-unique-fragments.txt 
+nano ../../makefull.sh 
+lt
+mv list-of-unique-fragments.txt ./original/
+lt
+head uniq-mm.txt
+ salloc -p debug  -n 16 -t 1:00:00 -N 1
+../../makefull.sh 
+lt
+cd frequency-table/
+lt
+rm (.new
+rm *.new
+lt
+rm full*
+rm list-of-unique-fragments.txt *temp Fn-KMlib001-rep1-7_freq.txt.constant
+lt
+cd /ptmp/GIF/arnstrm/dipa/01-analysis/KM01/frequency-table
+lt
+lt
+ls
+cp ../mismatches-table/uniq-mm.txt ./
+lt
+wc -l *
+less SC-KMlib004-control_freq.txt.new
+nano ../../makefull.sh 
+lt
+cut -f 1 uniq-mm.txt |head
+nano ../../makefull.sh 
+lt
+../../makefull.sh 
+../../makefull.sh 
+lt
+rm *.new
+lt
+cd original/
+lt
+mv *_freq.txt ../
+lt
+cd ..
+cd original/
+lt
+cd ..
+lt
+rm -rf original full_freq.txt
+lt
+../../makefull.sh uniq-mm.txt 
+lt
+wc -l list-of-unique-fragments.txt
+wc -l As_KMlib004-rep0_10_freq.txt.new
+less list-of-unique-fragments.txt
+head Lb-KMlib004-rep3-11_freq.txt
+wc -l Lb-KMlib004-rep3-11_freq.txt
+cat ../../makefull.sh 
+#cut -f 1 $freq > ${freq}.temp
+freq=Lb-KMlib004-rep3-9_freq.txt
+cut -f 1 $freq > ${freq}.temp
+grep -Fwv -f ${freq}.temp list-of-unique-fragments.txt | awk '{print $1"\t0"}' > ${freq}.constant
+wc -l ${freq}.constant
+wc -l ${freq}.temp
+calc wc -l list-of-unique-fragments.txt 
+wc -l list-of-unique-fragments.txt
+lt
+head As_KMlib004-rep0_10_freq.txt.new
+cut -f 1 As_KMlib004-rep0_10_freq.txt.new |sort |uniq |wc -l
+lt
+less uniq-mm.txt 
+wc -l uniq-mm.txt
+cd ../
+lt
+cd mismatches-table/
+lt
+rm uniq-mm.txt 
+cat *_mm-stats.txt > temp.txt
+lt
+wc -l temp.txt 
+sort --parallel 12 temp.txt > temp-sorted.txt
+uniq temp-sorted.txt > temp-sorted-uniq.txt 
+wc -l temp-sorted-uniq.txt
+lt
+rm temp.txt temp-sorted.txt
+lt
+cd ../
+lt
+cd frequency-table/
+lt
+rm *.new
+lt
+rm *.temp
+rm *.constant
+lt
+#rm list-of-unique-fragments.txt 
+wc -l list-of-unique-fragments.txt 
+wc -l ../mismatches-table/temp-sorted-uniq.txt 
+wc -l Lb-KMlib004-rep2-6_freq.txt
+wc -l ../mismatches-table/Lb-KMlib004-rep2-6_mm-stats.txt 
+cut -f ../mismatches-table/Lb-KMlib004-rep2-6_mm-stats.txt |head
+cut -f 1 ../mismatches-table/Lb-KMlib004-rep2-6_mm-stats.txt |head
+cut -f 1 ../mismatches-table/Lb-KMlib004-rep2-6_mm-stats.txt |sort |uniq |wc -l
+less Lb-KMlib004-rep3-8_freq.txt
+cat ../mismatches-table/Lb-KMlib004-rep2-6_mm-stats.txt |sort |uniq |wc -l
+wc -l Lb-KMlib004-rep3-8_freq.txt
+wc -l Lb-KMlib004-rep3-6_freq.txt
+wc -l Lb-KMlib004-rep2-6_freq.txt
+cut -f 1 Lb-KMlib004-rep2-6_freq.txt > 1
+wc -l 1
+head 1
+head list-of-unique-fragments.txt
+grep -Fwv 1 list-of-unique-fragments.txt |wc -l
+wc -l list-of-unique-fragments.txt 
+head 1
+grep "GTTAAAAATGAGCTTTTCTA" list-of-unique-fragments.txt
+grep -v "GTTAAAAATGAGCTTTTCTA" list-of-unique-fragments.txt
+grep -v "GTTAAAAATGAGCTTTTCTA" list-of-unique-fragments.txt |wc -l
+lt
+grep -Fwv -f 1 list-of-unique-fragments.txt |wc -l
+wc -l 1
+lt
+rm 1 
+lt
+cut -f 1 Lb-KMlib004-rep3-8_freq.txt > Lb-KMlib004-rep3-8_freq.temp
+grep -Fvw -f Lb-KMlib004-rep3-8_freq.temp list-of-unique-fragments.txt |wc -l
+wc -l Lb-KMlib004-rep3-8_freq.temp
+wc -l list-of-unique-fragments.txt
+grep -Fvw -f Lb-KMlib004-rep3-8_freq.temp list-of-unique-fragments.txt > sub
+wc -l sub Lb-KMlib004-rep3-8_freq.temp
+cat sub Lb-KMlib004-rep3-8_freq.temp |sort |uniq |wc -l
+less Lb-KMlib004-rep3-8_freq.temp
+od -c Lb-KMlib004-rep3-8_freq.temp
+od -c list-of-unique-fragments.txt 
+lt
+rm sub Lb-KMlib004-rep3-8_freq.temp list-of-unique-fragments.txt
+lt
+cat *_freq.txt |head
+cat *_freq.txt |cut -f 1 |head
+cat *_freq.txt |cut -f 1 |sort |uniq > temp
+wc -l temp 
+wc -l uniq-mm.txt 
+grep -Fwv temp uniq-mm.txt 
+lt
+head temp 
+head uniq-mm.txt 
+grep -Fwv temp <(cut -f 1 uniq-mm.txt) |head
+grep -Fwv temp <(cut -f 1 uniq-mm.txt) |wc -l
+grep -Fwv -f temp <(cut -f 1 uniq-mm.txt) |wc -l
+lt
+rm temp uniq-mm.txt 
+lt
+qsa
+exot
+exit
+ salloc -p freemedium -n 12 -t 8:00:00 -N 1
+exit
+ salloc -p freemedium -n 12 -t 8:00:00 -N 1
+rm *new
+rm *.constatn
+rm *.constant
+rm *.temo
+rm *.temp
+lt
+rm full.fa full.jf list-of-unique-fragments.txt full_freq.txt
+lt
+less As_KMlib001-rep0_10_freq.txt
+cut -f 1 As_KMlib001-rep0_10_freq.txt |sort |uniq |wc -l
+wc -l As_KMlib001-rep0_10_freq.txt
+cut -f 1 ../mismatches-table/As_KMlib001-rep0_10_mm-stats.txt |sort |uniq |wc -l
+ls *.txt
+ls *.txt |wc -l
+cd ../mismatches-table/
+lt
+ls *_mm-stats.txt |wc -l
+cd ../
+lt
+cd frequency-table/
+lt
+cat *.txt |cut -f 1 > temp
+lt
+wc -l temp 
+sort --parallel 12 temp > temp-sorted
+uniq temp-sorted > temp-sorted-uniq
+lt
+wc -l temp-sorted-uniq 
+head temp-sorted-uniq
+cd ../mismatches-table/
+lt
+wc -l uniq-mm.txt 
+cd ../frequency-table/
+wc -l temp-sorted-uniq 
+ls
+rm temp*
+lt
+cd ../../
+lt
+cd KM02/
+lt
+cd mismatches-table/
+lt
+cat *_mm-stats.txt |cut -f 1 |sort |uniq > mm
+wc -l mm
+mv mm ../fre*/
+cd ../frequency-table/
+ls
+wc -l mm uniq-mm.txt 
+head Sa-KMlib002-rep1-5_freq.txt.new
+cut -f 1 *_freq.txt.new |sort |uniq > fr
+wc -l fr
+lt
+wc -l N-KMlib002-control_freq.txt.new
+cd ../
+lt
+cd ../KM03/
+lt
+cd mismatches-table/
+lt
+rm uniq-mm.txt 
+lt
+cat *_mm-stats.txt |cut -f 1 |sort |uniq > mm
+wc -l mm 
+cd ../
+lt
+cd frequency-table/
+lt
+wc -l Fn-KMlib003-rep2-10_freq.txt.new
+wc -l ../mismatches-table/mm
+lt
+rm *.new
+lt
+less full_freq.txt
+wc -l full_freq.txt
+wc -l ../mismatches-table/mm
+lt
+rm full.fa full.jf full_freq.txt list-of-unique-fragments.txt Lb_KMlib003-rep0_10_freq.txt.temp Lb_KMlib003-rep0_10_freq.txt.constant
+lt
+head Lb_KMlib003-rep0_5_freq.txt
+cat *_freq.txt > fr
+rm fr
+cat *_freq.txt |cut -f 1 > fr
+sort --parallel 12 fr > fr-sorted
+uniq fr-sorted > fr-sorted-uniq
+lt
+wc -l fr-sorted-uniq
+wc -l ../mismatches-table/mm
+cp ../mismatches-table/mm ./
+lt
+rm fr fr-sorted 
+lt
+wc -l mm fr-sorted-uniq 
+rep -Fvxf fr-sorted-uniq mm 
+grep -Fvxf fr-sorted-uniq mm 
+join -v 1 fr-sorted-uniq mm
+join -v 1 fr-sorted-uniq mm |wc -l
+lt
+rm fr-sorted-uniq 
+rm mm 
+lt
+cd ../../
+lt
+less process_KM03.sh 
+unset -v LESSOPEN
+less process_KM03.sh 
+nano process_KM03.sh
+cd KM03/
+lt
+../process_KM03.sh As_KMlib003-rep0_10.fq
+lt
+wc -l As_KMlib003-rep0_10_freq.txt
+grep -c ">" As_KMlib003-rep0_10_counts_dumps.fa
+wc -l As_KMlib003-rep0_10_extracted_cas.fa
+wc -l As_KMlib003-rep0_10_mm-stats.txt
+sort As_KMlib003-rep0_10_mm-stats.txt |uniq |wc -l
+wc -l As_KMlib003-rep0_10_extracted_cas.txt
+wc -l As_KMlib003-rep0_10_freq.txt
+head As_KMlib003-rep0_10_extracted_cas.txt
+sed 's/\t//g' As_KMlib003-rep0_10_extracted_cas.txt |head
+sed 's/\t//g' As_KMlib003-rep0_10_extracted_cas.txt |sort --parallel 10 > temp1
+uniq temp1 > temp2
+rm temp2 
+uniq -c temp1 |awk '{print $2"\t"$1}' > temp2
+less temp2 
+wc -l temp2 
+cd ..
+lt
+nano process_KM03.sh 
+lt
+cd KM0
+cd KM03/
+lt
+rm -rf extracted-seq position-matrix mismatches-table frequency-table As_KMlib003-rep0_10_extracted_cas.txt *.txt
+lt
+rm temp* As_KMlib003-rep0_10_extracted_cas.fa As_KMlib003-rep0_10_extracted_cas.jf As_KMlib003-rep0_10_counts_dumps.fa
+lt
+cd /ptmp/GIF/arnstrm/dipa/01-analysis/KM03
+lt
+cat As_KMlib003-rep0_10_pos-summary.txt
+lt
+less As_KMlib003-rep0_10_mmfile.txt
+for f in *.fq; do ../process_KM03.sh $f; done &>stdout.txt
+less stdout.txt 
+lt
+ls
+../cleanup-process-files.sh 
+lt
+cd mismatches-table/
+lt
+ls
+cd ../
+lt
+cd frequency-table/
+lt
+ls
+less uniq-mm.txt 
+wc -l uniq-mm.txt 
+awk '$2==1' uniq-mm.txt |wc -l
+less Fn-KMlib003-rep3-7_freq.txt
+cat *_freq.txt > fr
+head fr 
+cut -f 1 fr |sort --parallel 10 |uniq > fr-sorted-uniq
+lt
+wc -l fr-sorted-uniq uniq-mm.txt 
+grep -Fvxf fr-sorted-uniq uniq-mm.txt 
+grep -Fvxf fr-sorted-uniq <(cut -f 1 uniq-mm.txt)
+lt
+rm fr uniq-mm.txt 
+lt
+rm fr-sorted-uniq 
+lt
+cat ../../makefull.sh 
+rmdir original/
+lt
+cd ../
+lt
+cd mismatches-table/
+lt
+cat *_mm-stats.txt |sort --parallel 10 |uniq > uniq-mm.txt
+mv uniq-mm.txt ../frequency-table/
+cd ../frequency-table/
+lt
+../../makefull.sh uniq-mm.txt 
+lt
+ls
+less Fn-KMlib003-rep3-3_freq.txt.new
+cd ../
+lt
+cd ../
+lt
+cd KM04/
+lt
+cd ../
+lt
+cd KM03/
+lt
+ls
+rm *_extracted_cas.txt *_mmfile.txt
+lt
+rm stdout.txt 
+lt
+rm 0rf position-matrix extracted-seq mismatches-table frequency-table
+rm -rf position-matrix extracted-seq mismatches-table frequency-table
+lt
+cd ../
+lt
+cd KM02/
+lt
+rm -rf position-matrix extracted-seq mismatches-table frequency-table stdout.txt 
+lt
+cd ../
+lt
+cd KM04/
+lt
+rm -rf position-matrix extracted-seq mismatches-table frequency-table stdout.txt 
+cd ..
+lt
+cd KM01/
+lt
+rm -rf position-matrix extracted-seq mismatches-table frequency-table stdout.txt 
+lt
+cd ..
+lt
+nano process_KM03.sh 
+nnao process_KM03.sh 
+nano process_KM03.sh
+lt
+cat process_KM03.sh 
+nano process_KM0*sh
+lt
+qsa
+ salloc -p freemedium -n 12 -t 8:00:00 -N 1
+cd ../
+lt
+cd ../
+lt
+cd /ptmp/GIF/arnstrm/dipa/01-analysis
+cd /ptmp/GIF/arnstrm/dipa/01-analysis
+cd /ptmp/GIF/arnstrm/dipa/01-analysis
+lt
+cd KM01/
+cd KM02
+cd KM03
+cd KM04
+lt
+ls
+for f in *.fq; do ../process_KM02.sh $f; done &>stdout.txt
+lt
+nano ../cleanup-process-files.sh 
+cat ../makefull.sh 
+nano ../cleanup-process-files.sh 
+lt
+../cleanup-process-files.sh 
+for f in *.fq; do ../process_KM04.sh $f; done &>stdout.txt
+for f in *.fq; do ../process_KM03.sh $f; done &>stdout.txt
+cd frequency-table/
+lt
+wc -l uniq-mm.txt 
+cd ../
+lt
+exit
+ salloc -p freemedium -n 12 -t 8:00:00 -N 1
+lt
+cd fre
+lt
+cd frequency-table/
+lt
+less uniq-mm.txt
+awk '$2==1' uniq-mm.txt |wc -l
+awk '$2==0' uniq-mm.txt |wc -l
+awk '$2==3' uniq-mm.txt |wc -l
+awk '$2==4' uniq-mm.txt |wc -l
+awk '$2==5' uniq-mm.txt |wc -l
+lt
+for f in *.fq; do ../process_KM01.sh $f; done &>stdout.txt
+join_files.sh  uniq-mm.txt N-KMlib002-control_freq.txt.new SC-KMlib002-control_freq.txt.new Sa-KMlib002-rep1-1_freq.txt.new Sa-KMlib002-rep1-2_freq.txt.new Sa-KMlib002-rep1-4_freq.txt.new Sa-KMlib002-rep1-6_freq.txt.new Sa-KMlib002-rep1-8_freq.txt.new Sa-KMlib002-rep1-10_freq.txt.new Sa-KMlib002-rep1-3_freq.txt.new Sa-KMlib002-rep1-5_freq.txt.new Sa-KMlib002-rep1-7_freq.txt.new Sa-KMlib002-rep1-9_freq.txt.new Sa-KMlib002-rep1-11_freq.txt.new Sp-KMlib002-rep1-1_freq.txt.new Sp-KMlib002-rep1-2_freq.txt.new Sp-KMlib002-rep1-4_freq.txt.new Sp-KMlib002-rep1-6_freq.txt.new Sp-KMlib002-rep1-8_freq.txt.new Sp-KMlib002-rep1-10_freq.txt.new Sp-KMlib002-rep1-3_freq.txt.new Sp-KMlib002-rep1-5_freq.txt.new Sp-KMlib002-rep1-7_freq.txt.new Sp-KMlib002-rep1-9_freq.txt.new Sp-KMlib002-rep1-11_freq.txt.new |sed 's/_freq.txt.new//g' |sed 's/^\tuniq-mm.txt/Kmer\tMisMatches/g' > combined_counts.txt
+lt
+less -S combined_counts.txt
+awk '{ for(i=3; i<=NF;i++) j+=$i; print j"\t"$0; j=0 }' combined_counts.txt > rowsums_combined_counts.txt
+less -S rowsums_combined_counts.txt
+awk '{ for(i=3; i<=NF;i++) j+=$i; print j"\t"$0; j=0 }' combined_counts.txt |sed 's/0\tKmer/RowSum-down\tkmer/g' > rowsums_combined_counts.txt
+less -S rowsums_combined_counts.txt
+lt
+head -n 1 rowsums_combined_counts.txt > header
+awk 'NR>1' rowsums_combined_counts.txt > body
+lt
+head body 
+ls
+awk '{for(i=1;i<=NF;i++)$i=(a[i]+=$i)}END{print}' body |less -S
+lt
+awk '{for(i=1;i<=NF;i++)$i=(a[i]+=$i)}END{print}' body > body-colsum.txt
+less -S body-colsum.txt
+cat body-colsum.txt 
+awk 'BEGIN{OFS=FS="\t"}{for(i=3; i<=NF;i++) j+=$i; print j; j=0 }' body > test
+less test 
+wc -l test 
+rm test 
+lt
+../cleanup-process-files.sh 
+awk 'BEGIN{OFS=FS="\t"}{for(i=1;i<=NF;i++)$i=(a[i]+=$i)}END{print}' body 
+awk 'BEGIN{OFS=FS="\t"}{for(i=1;i<=NF;i++)$i=(a[i]+=$i)}END{print}' body > colsums
+lt
+cat co
+cat colsums 
+wc -l colsums 
+less -S colsums 
+lt
+rm colsums 
+rm body-colsum.txt 
+lt
+awk 'BEGIN{OFS=FS="\t"}{for(i=1;i<=NF;i++)$i=(a[i]+=$i)}END{print}' body > colsums
+nano colsums 
+cat header colsums body >> final_counts.txt
+less final_counts.txt 
+less -S final_counts.txt 
+../cleanup-process-files.sh 
+awk '$3==1' body |wc -l
+awk '$3==1' body |less -S
+awk '$3==1' body > sm-body
+awk 'BEGIN{OFS=FS="\t"}{for(i=1;i<=NF;i++)$i=(a[i]+=$i)}END{print}' sm-body > sm-colsums
+cat header sm-colsums sm-body >> final_counts-mismatch-one-only.txt
+less final_counts-mismatch-one-only.txt
+less -S final_counts-mismatch-one-only.txt
+nano final_counts-mismatch-one-only.txt
+lt
+wc -l frequency-table/uniq-mm.txt 
+exit
+ wc -l frequency-table/uniq-mm.txt
+exit
+ salloc -p freemedium -n 12 -t 8:00:00 -N 1
+less body 
+less -S body 
+awk '$1>=10' body > ge10-body
+awk 'BEGIN{OFS=FS="\t"}{for(i=1;i<=NF;i++)$i=(a[i]+=$i)}END{print}' ge10-body > ge10-body-colsums
+cat header ge10-body-colsums ge10-body >> final_counts-total-counts-ge10.txt
+lt
+less -S final_counts-total-counts-ge10.txt 
+nano final_counts-total-counts-ge10.txt
+lt
+less final_counts-total-counts-ge10.txt
+lt
+less -S body 
+less -S final_counts-mismatch-one-only.txt
+awk '$2>1' final_counts-mismatch-one-only.txt > test
+awk 'NR>1 {m=$2; for(i=3;i<=NF;i++) if($3>m) m=$3; for(i=2;i<=NF;i++) $i/=m}1' test
+lt
+less test 
+awk 'NR>1' final_counts-mismatch-one-only.txt > test
+less test 
+awk 'NR>1 {m=$2; for(i=3;i<=NF;i++) if($3>m) m=$3; for(i=2;i<=NF;i++) $i/=m}1' test
+awk 'NR>1 {m=$3; for(i=3;i<=NF;i++) if($3>m) m=$3; for(i=2;i<=NF;i++) $i/=m}1' test
+lt
+awk '{$3/=a}1' test 
+head test 
+../cleanup-process-files.sh 
+ wc -l frequency-table/uniq-mm.txt
+exit
+ salloc -p freemedium -n 12 -t 8:00:00 -N 1
+awk '{if(NR%5==1)a=$1;else lt$1/=a}1' input.txt
+ll
+@awk 'NR==FNR{sum+= $1; next}{printf("%4.2f\n", $1/sum)}' body body 
+less body 
+less -S body 
+awk 'NR==FNR{sum+= $4; next}{printf("%4.2f\n", $4/sum)}' body body 
+awk '$3==1' body
+awk '$3==1' body > temp
+awk 'NR==FNR{sum+= $4; next}{printf("%4.2f\n", $4/sum)}' temp temp 
+awk 'NR==FNR{sum+= $4; next}{printf("%4.4f\n", $4/sum)}' temp temp 
+awk 'NR==FNR{sum+= $4; next}{printf("%4.5f\n", $4/sum)}' temp temp 
+awk '{ if (NR==1) { n = split($0, a, "\t"); } for (i=1; i<n; i++) { printf("%.15f\t", ($i/a[i])); } printf("%.15f\n", ($n/a[n])); }' temp
+awk '{ if (NR==1) { n = split($0, a, "\t"); } for (i=1; i<n; i++) { printf("%.15f\t", ($i/a[i])); } printf("%.15f\n", ($n/a[n])); }' temp 
+awk '{ if (NR==1) { n = split($0, a, "\t"); } for (i=4; i<n; i++) { printf("%.15f\t", ($i/a[i])); } printf("%.15f\n", ($n/a[n])); }' temp 
+awk '{ if (NR==1) { n = split($0, a, "\t"); } for (i=4; i<n; i++) { printf("%.15f\t", ($i/a[i])); } printf("%.15f\n", ($n/a[n])); }' temp |less -S
+awk '{ if (NR==1) { n = split($0, a, "\t"); } for (i=4; i<n; i++) { printf("%.15f\t", ($i/a[i])); } printf("%.15f\n", ($n/a[n])); }' temp |wc -l
+awk '{ if (NR==1) { n = split($0, a, "\t"); } for (i=4; i<n; i++) { printf("%.15f\t", ($i/a[i])); } printf("%.15f\n", ($n/a[n])); }' temp |awk '{print NF}'
+lt
+head -n header 
+cat header 
+cut -f 1-3 body
+kt
+lt
+rm te
+rm temp 
+cat sm-colsums sm-body |cut -f 4- > prop-sm-body
+cut -f 1-3 > prop-names
+lt
+rm test prop-sm-body prop-names
+lt
+cat sm-colsums sm-body |cut -f 4- > prop-sm-body
+less -S prop-sm-body
+cut -f 1-3 > prop-names
+cut -f 1-3 sm-body > prop-names
+awk '{ if (NR==1) { n = split($0, a, "\t"); } for (i=1; i<n; i++) { printf("%.15f\t", ($i/a[i])); } printf("%.15f\n", ($n/a[n])); }' prop-sm-body > prop-sm-body-calculated
+less -S prop-sm-body-calculated
+cat header <(paste prop-names prop-sm-body-calculated) > final_proportions-mismatch-one-only.txt
+less -S final_proportions-mismatch-one-only.txt
+awk '{ if (NR==1) { n = split($0, a, "\t"); } for (i=1; i<n; i++) { printf("%.15f\t", ($i/a[i])); } printf("%.15f\n", ($n/a[n])); }' prop-sm-body |awk 'NR>1' > prop-sm-body-calculated
+cat header <(paste prop-names prop-sm-body-calculated) > final_proportions-mismatch-one-only.txt
+less -S final_proportions-mismatch-one-only.txt
+lt
+cat ge10-body-colsums ge10-body |cut -f 4- > prop-ge10-body
+cut -f 1-3 ge10-body > prop-names
+awk '{ if (NR==1) { n = split($0, a, "\t"); } for (i=1; i<n; i++) { printf("%.15f\t", ($i/a[i])); } printf("%.15f\n", ($n/a[n])); }' prop-ge10-body > prop-ge10-body-calculated
+cat header <(paste prop-names prop-ge10-body-calculated) > final_proportions-total-counts-ge10.txt
+lt
+less -S final_proportions-total-counts-ge10.txt
+awk '{ if (NR==1) { n = split($0, a, "\t"); } for (i=1; i<n; i++) { printf("%.15f\t", ($i/a[i])); } printf("%.15f\n", ($n/a[n])); }' prop-ge10-body |awk 'NR>1' > prop-ge10-body-calculated
+cat header <(paste prop-names prop-ge10-body-calculated) > final_proportions-total-counts-ge10.txt
+less -S final_proportions-total-counts-ge10.txt
+lt
+rm header *-body *-colsums prop-*  
+lt
+less -S final_counts-mismatch-one-only.txt
+less -S final_proportions-mismatch-one-only.txt
+lt
+rm body colsums 
+lt
+rename final- libKM002- *.txt
+lt
+rename final libKM002 *.txt
+lt
+rename libKM002 KMlib004 *.txt
+lt
+less -S KMlib004_counts.txt 
+cd ../../KM01/
+lt
+less stdout.txt 
+cd frequency-table/
+lt
+ls
+ls -1 *.new
+lt
+nano final-process.sh
+lt
+chmod +x final-process.sh 
+./final-process.sh 
+lt
+rm combined_counts.txt rowsums_combined_counts.txt header body sm-colsums sm-body final_counts* ge10-body prop-*
+lt
+rm ge10-body-colsums 
+lt
+nano final-process.sh 
+nano colsums
+nano final-process.sh 
+lt
+qsa
+lt
+cd /ptmp/GIF/arnstrm/dipa/01-analysis/KM01/frequency-table
+lt
+cat final-process.sh 
+./final-process.sh 
+lt
+less -S final_counts.txt
+nano final_counts.txt
+head final_counts.txt
+nano final_counts.txt
+lt
+less -S final_counts-mismatch-one-only.txt
+nano final_counts-mismatch-one-only.txt
+head final_counts.txt
+nano final_counts-mismatch-one-only.txt
+lt
+less -S ColSum-side
+less -S final_counts-mismatch-one-only.txt
+lt
+nano final_counts-total-counts-ge10.txt
+lt
+nano final_proportions-mismatch-one-only.txt
+nano final_proportions-total-counts-ge10.txt
+lt
+nano final-process.sh 
+lt
+less -S combined_counts.txt 
+less rowsums_combined_counts.txt 
+less -S rowsums_combined_counts.txt
+lt
+rm body colsums 
+lt
+rm final_*
+lt
+rm rowsums_combined_counts.txt 
+rm combined_counts.txt 
+lt
+cat final-process.sh 
+lt
+./final-process.sh 
+lt
+less -S final_counts.txt
+sed -i 's/27014232\t0\t11423843/ColSum-side\tNA\t11423843/1' final_counts.txt
+less -S final_counts.txt
+less -S final_counts-mismatch-one-only.txt
+grep -e "1003040\t0\t60\t13571" final_counts-mismatch-one-only.txt
+grep -E "1003040\t0\t60\t13571" final_counts-mismatch-one-only.txt
+grep -P "1003040\t0\t60\t13571" final_counts-mismatch-one-only.txt
+sed -i 's/^1003040\t0\t60\t13571/ColSum-side\tNA\t60\t13571/g' final_counts-mismatch-one-only.txt
+less -S final_counts-mismatch-one-only.txt
+lt
+less -S final_proportions-mismatch-one-only.txt
+less -S final_proportions-total-counts-ge10.txt
+less -S final_counts-total-counts-ge10.txt
+sed -i 's/23365687\t0\t2372561/ColSum-side\tNA\t2372561/g' final_counts-total-counts-ge10.txt
+less -S 23365687        0       2372561
+less -S final_counts-total-counts-ge10.txt
+lt
+rename final_ KMlib001_ *.txt
+lt
+less -S KMlib001
+lt
+cd ../../
+lt
+cd KM03/
+lt
+cd frequency-table/
+lt
+ls -1 lt
+ls -1
+cp ../../KM01/frequency-table/final-process.sh ./
+nano final-process.sh 
+lt
+./final-process.sh 
+lt
+less -S final_counts.txt
+head -n 2 *.txt
+lt
+cd ../../KM04/
+cd frequency-table/
+lt
+cp ../../KM03/frequency-table/final-process.sh ./
+lt
+nano final-process.sh 
+ls -1 *.newfinal_counts-mismatch-one-only.txt
+ls -1 *.new
+lt
+nano final-process.sh 
+lt
+./final-process.sh 
+ salloc -p freemedium -n 12 -t 8:00:00 -N 1
+lt
+lt
+less -S combined_counts.txt
+less -S rowsums_combined_counts.txt
+less -S KMlib001_proportions-mismatch-one-only.txt
+less -S KMlib001_proportions-total-counts-ge10.txt
+less -S KMlib001_counts.txt
+less -S KMlib001_counts-mismatch-one-only.txt
+less -S KMlib001_counts-total-counts-ge10.txt
+cd ../../KM02/frequency-table/
+lt
+less -S combined_counts.txt
+rename KMlib004_ KMlib002_*.txt
+rename KMlib004_ KMlib002_ *.txt
+lt
+less -S combined_counts.txt
+less -S rowsums_combined_counts.txt
+less -S KMlib002_counts.txt
+less -S KMlib002_counts-mismatch-one-only.txt
+less -S KMlib002_proportions-mismatch-one-only.txt
+less -S KMlib002_proportions-total-counts-ge10.txt
+cd ../../KM03/frequency-table/
+lt
+rename final_ KMlib003_ *.txt
+lt
+less -S combined_counts.txt
+less -S rowsums_combined_counts.txt
+less -S KMlib003_counts.txt
+sed -i 's/^20461478\t0/ColSum-side\tNA/g' KMlib003_counts.txt
+less -S 20461478        0
+less -S KMlib003_counts.txt
+less -S KMlib003_counts-mismatch-one-only.txt
+sed -i 's/^731080\t0/ColSum-side\tNA/g' KMlib003_counts-mismatch-one-only.txt
+less -S KMlib003_counts-mismatch-one-only.txt
+less -S KMlib003_proportions-mismatch-one-only.txt
+less -S KMlib003_counts-total-counts-ge10.txt
+sed -i 's/^19119348\t0/ColSum-side\tNA/g' KMlib003_counts-total-counts-ge10.txt
+less -S KMlib003_counts-total-counts-ge10.txt
+less -S KMlib003_proportions-total-counts-ge10.txt
+lt
+rename counts.txt counts_KM03.txt *.txt
+lt
+cd ../
+lt
+cd ../KM04/frequency-table/
+lt
+rename counts.txt counts_KM04.txt *.txt
+rename final_ KMlib004_ *.txt
+lt
+less -S KMlib004_counts_KM04.txt
+sed -i 's/^13612298\t0/ColSum-side\tNA/g' KMlib004_counts_KM04.txt
+less -S KMlib004_counts_KM04.txt
+less -S KMlib004_counts-mismatch-one-only.txt
+sed -i 's/^479558\t0/ColSum-side\tNA/g' KMlib004_counts-mismatch-one-only.txt
+less -S KMlib004_counts-mismatch-one-only.txt
+less -S KMlib004_proportions-mismatch-one-only.txt
+less -S KMlib004_counts-total-counts-ge10.txt
+sed -i 's/^12677953\t0/ColSum-side\tNA/g' KMlib004_counts-total-counts-ge10.txt
+less -S KMlib004_counts-total-counts-ge10.txt
+lt
+cd ../
+lt
+cd ../KM01/
+lt
+cd frequency-table/
+lt
+rename counts.txt counts_KM01.txt *.txt
+lt
+cd ../../KM02/frequency-table/
+lt
+rename counts.txt counts_KM02.txt *.txt
+lt
+kinit
+cd /lss/research/sashital-lab/Karthik/ISUGIF/
+lt
+ls KMlib004/
+ll
+cd KMlib004/
+lt
+cd ..
+lt
+mkdir old-results
+mv KMlib004 ./old-results/
+lt
+mkdir 20190403_results
+lt
+cd 20190403_results/
+lt
+mkdir KMlib001 KMlib002 KMlib003 KMlib004
+lt
+cp /ptmp/GIF/arnstrm/dipa/01-analysis/KM02/frequency-table/*.txt ./KMlib002/
+cp /ptmp/GIF/arnstrm/dipa/01-analysis/KM03/frequency-table/*.txt ./KMlib003/
+cp /ptmp/GIF/arnstrm/dipa/01-analysis/KM04/frequency-table/*.txt ./KMlib004/
+cp /ptmp/GIF/arnstrm/dipa/01-analysis/KM01/frequency-table/*.txt ./KMlib001/
+lt
+ls *
+cd KMlib001/
+ls -1
+lt
+cd ..
+lt
+nano README.txt
+cd KMlib001/
+lt
+less -S combined_counts_KM01.txt
+less -S KMlib001_counts_KM01.txt
+lt
+less uniq-mm.txt 
+lt
+cd ../
+lt
+nano README.txt 
+less N-KMlib001-control_mm-stats.txt
+cat Lb-KMlib001-rep3-9_mismatches_summary.txt
+ls
+join_files.sh _mismatches_summary.txt
+join_files.sh *_mismatches_summary.txt
+join_files.sh *_mismatches_summary.txt |sed 's/_mismatches_summary.txt//g'
+join_files.sh *_mismatches_summary.txt |sed 's/_mismatches_summary.txt//g' > mismatch_summary_combined.txt
+cd ../../KM02/mismatches-table/
+join_files.sh *_mismatches_summary.txt |sed 's/_mismatches_summary.txt//g' > mismatch_summary_combined.txt
+cd ../../KM03/mismatches-table/
+join_files.sh *_mismatches_summary.txt |sed 's/_mismatches_summary.txt//g' > mismatch_summary_combined.txt
+cd ../../KM04/mismatches-table/
+join_files.sh *_mismatches_summary.txt |sed 's/_mismatches_summary.txt//g' > mismatch_summary_combined.txt
+lt
+rename mismatch_summary_combined mismatch_summary_combined-KM04 *.txt
+cd -
+rename mismatch_summary_combined mismatch_summary_combined-KM03 *.txt
+cd ../../KM02/mismatches-table/
+rename mismatch_summary_combined mismatch_summary_combined-KM02 *.txt
+cd ../../KM01/mismatches-table/
+rename mismatch_summary_combined mismatch_summary_combined-KM01 *.txt
+lt
+nano mismatch_summary_combined-KM01.txt 
+lt
+nano pad_and_merge-mismatches.sh
+wc -l Lb-KMlib001-rep3-5_mismatches_summary.txt
+cut -f 1 Lb-KMlib001-rep3-5_mismatches_summary.txt
+nano pad_and_merge-mismatches.sh 
+lt
+chmod +x pad_and_merge-mismatches.sh
+./pad_and_merge-mismatches.sh 
+nano pad_and_merge-mismatches.sh 
+./pad_and_merge-mismatches.sh 
+cat ids 
+lt
+rm ids 
+lt
+rm *.1
+lt
+cat pad_and_merge-mismatches.sh 
+cat *mismatches_summary.txt | cut -f 1 |sort |uniq -n > ids
+cat *mismatches_summary.txt | cut -f 1 |sort -k 1,1 n |uniq > ids
+cat *mismatches_summary.txt | cut -f 1 |sort -k 1,1 -n |uniq > ids
+cat ids 
+nano pad_and_merge-mismatches.sh 
+./pad_and_merge-mismatches.sh 
+cat ids 
+lt
+cat Lb_KMlib001-rep0_4_mismatches_summary.txt.1Lb_KMlib001-rep0_4_mismatches_summary.txt.1
+cat Lb_KMlib001-rep0_4_mismatches_summary.txt.1
+rm *.1
+lt
+nano pad_and_merge-mismatches.sh 
+lt
+lt
+cat Lb-KMlib001-rep3-3_mm-stats.txt
+nano pad_and_merge-mismatches.sh 
+./pad_and_merge-mismatches.sh 
+lt
+cat SC-KMlib001-control_mismatches_summary.txt.1
+nano pad_and_merge-mismatches.sh 
+lt
+rm *.1
+./pad_and_merge-mismatches.sh 
+lt
+less -S mismatch_summary_combined.txt
+nano pad_and_merge-mismatches.sh 
+lt
+rm *.1
+lt
+nano pad_and_merge-mismatches.sh 
+lt
+rm ids  temp*
+lt
+rm mismatch_summary_combined-KM01.txt
+nano pad_and_merge-mismatches.sh 
+lt
+cat pad_and_merge-mismatches.sh 
+rm mismatch_summary_combined.txt
+./pad_and_merge-mismatches.sh 
+lt
+cat mismatch_summary_combined-sorted.txt
+less -S mismatch_summary_combined-sorted.txt
+nano pad_and_merge-mismatches.sh 
+lt
+rm mismatch_summary_combined.txt mismatch_summary_combined-sorted.txt
+./pad_and_merge-mismatches.sh 
+lt
+cat mismatch_summary_combined-sorted.txt
+less -S mismatch_summary_combined-sorted.txt
+less -S mismatch_summary_combined-sorted.txt
+rename mismatch_summary_combined-sorted mismatch_summary_combined-KM01 *.txt
+lt
+cd ../../KM02/mismatches-table/
+lt
+less -S mismatch_summary_combined-KM02.txt
+rm mismatch_summary_combined-KM02.txt
+cp /ptmp/GIF/arnstrm/dipa/01-analysis/KM01/mismatches-table/pad_and_merge-mismatches.sh ./
+lt
+./pad_and_merge-mismatches.sh 
+lt
+rename mismatch_summary_combined-sorted mismatch_summary_combined-KM02 *.txt
+cd ../../KM03/mismatches-table/
+cp /ptmp/GIF/arnstrm/dipa/01-analysis/KM01/mismatches-table/pad_and_merge-mismatches.sh ./
+./pad_and_merge-mismatches.sh 
+rename mismatch_summary_combined-sorted mismatch_summary_combined-KM03 *.txt
+lt
+less -S mismatch_summary_combined-KM03.txt
+cd ../../KM04/mismatches-table/
+cp /ptmp/GIF/arnstrm/dipa/01-analysis/KM01/mismatches-table/pad_and_merge-mismatches.sh ./
+./pad_and_merge-mismatches.sh 
+rename mismatch_summary_combined-sorted mismatch_summary_combined-KM04 *.txt
+cd ../../
+cp KM0?/mismatches-table/mismatch_summary_combined-KM0* /lss/research/sashital-lab/Karthik/ISUGIF/20190403_results/
+cd /lss/research/sashital-lab/Karthik/ISUGIF/20190403_results/
+lt
+cat mismatch_summary_combined-KM01.txt
+less -S mismatch_summary_combined-KM01.txt
+cd arnstrm/
+lt
