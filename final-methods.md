@@ -1,17 +1,16 @@
 # Generating the mis-match count table and positional nucleotide frequency matrix
 
-The input is a fastq file. The R2 reads (reverse reads) have a 20bp cas sequence that contains up to 10 mis-matches. The flanking sequence is constant and needs to be trimmed before processing this 20bp sequence. Once 20 bp sequence is extracted, the number of mis-matches, as compared to the original sequence needs to be computed and the frequency of nucleotides at each position needs to be calculated.
+The input is a fastq file. The R2 reads (reverse reads) have a 20bp target sequences with 0 to 7 mismatches, with targets containing 2 or 3 mismatches maximally represented in the pool. The flanking sequence is constant which is trimmed before processing the target sequences. Once target sequences are extracted, the number of mismatches in the sequences are computed and the frequency of nucleotides at each position is calculated.
 
 ## Experiment
 
-Three different libraries were prepared:
+Three different libraries were used in this experiment:
 
-1. KMlib001
-2. KMlib002
-3. KMlib003
-4. KMlib004
+1. pLibrary PS4 (KMlib001)
+2. pLibrary EMX1 (KMlib003)
+3. pLibrary CCR5 (KMlib004)
 
-Each of these libraries were tested with three variants of Cas12a (FnCas12a, LbCas12a and AsCas12a) and were identified with the first 2 letters (Fn, Lb, and As). For KMlib002, it was
+Each of these libraries were tested with three orthologs of Cas12a (FnCas12a, LbCas12a and AsCas12a) and were identified with the first 2 letters (Fn, Lb, and As). 
 
 Design of the oligos were as follows
 ![figure1](assets/fig1.png)
