@@ -10,10 +10,10 @@ Three different libraries were used in this experiment:
 2. pLibrary EMX1 (KMlib003)
 3. pLibrary CCR5 (KMlib004)
 
-Each of these libraries were tested with three orthologs of Cas12a (FnCas12a, LbCas12a and AsCas12a) and were identified with the first 2 letters (Fn, Lb, and As). 
+Each of these libraries were tested with three orthologs of Cas12a (`FnCas12a`, `LbCas12a` and `AsCas12a`) and were identified with the first 2 letters (`Fn`, `Lb`, and `As`).
 
 Design of the oligos were as follows
-![figure1](assets/fig1.png)
+![figure1](assets/fig1-new.png)
 Fig1: Sequence features.
 
 
@@ -70,20 +70,14 @@ The processing commands were ran as follows:
 ```bash
 cd /work/GIF/arnstrm/Dipa/01-analysis
 ./link.sh
-mkdir -p KM01 KM02 KM03 KM04
+mkdir -p KM01 KM03 KM04
 mv *-KMlib001-* ./KM01
-mv *-KMlib002-* ./KM02
 mv *-KMlib003-* ./KM03
 mv *-KMlib004-* ./KM04
 # process KM01
 cd KM01
 for fq in *.fq; do
   ../process_KM01.sh $fq;
-done &>stdout.txt
-# process KM02
-cd ../KM02
-for fq in *.fq; do
-  ../process_KM02.sh $fq;
 done &>stdout.txt
 # process KM03
 cd ../KM03
@@ -111,19 +105,19 @@ The next task is to combine these files and make unified file for each of the ab
 
 ```bash
 # cleanup files, putting them in different folders:
-for KM in KM01 KM02 KM03 KM04; do
+for KM in KM01 KM03 KM04; do
   cd $KM
   ../cleanup-process-files.sh
   cd ..
 done
 # process frequency table files
-for KM in KM01 KM02 KM03 KM04; do
+for KM in KM01 KM03 KM04; do
   cd $KM/frequency-table
   ../../makefull.sh
   cd ..
 done
 # process mismatch-summary table files
-for KM in KM01 KM02 KM03 KM04; do
+for KM in KM01 KM03 KM04; do
   cd $KM/mismatches-table
   ../../pad_and_merge-mismatches.sh
   cd ..
@@ -136,9 +130,6 @@ Final processing of files were done as follows:
 ```bash
 cd KM01/frequency-table
 ../../final-process-KM01.sh
-cd -
-cd KM02/frequency-table
-../../final-process-KM02.sh
 cd -
 cd KM03/frequency-table
 ../../final-process-KM03.sh
@@ -251,18 +242,4 @@ cat hd_as As_KMlib004_nicked_proportions_ge10_avg.txt.1 >> As_KMlib004_nicked_pr
 cat hd_fn Fn_KMlib004_nicked_proportions_ge10_avg.txt.1 >> Fn_KMlib004_nicked_proportions_ge10_avg.txt
 rm *.1
 mv hd_* ../../KMlib003/Fig3/
-```
-
-Process KM02
-
-```bash
-cd ../KMlib002/
-cd Fig3/
-rm KMlib002_proportions-total-counts-ge10.txt
-cp ../KMlib002_proportions-total-counts-ge10.txt ./
-rm KMlib002_proportions-total-counts-ge10.txt
-cp ../KMlib002_proportions-total-counts-ge10.txt ./
-cut -f 2-3,6,12-16 KMlib002_proportions-total-counts-ge10.txt > Sa_KMlib002_nicked_proportions_ge10.txt
-cut -f 2-3,17,23-27 KMlib002_proportions-total-counts-ge10.txt > Sp_KMlib002_nicked_proportions_ge10.txt
-less Sa_KMlib002_nicked_proportions_ge10.txt
 ```
