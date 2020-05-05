@@ -12,6 +12,7 @@ Two different libraries were used in this experiment:
 Each of these libraries were tested with five Cas9 Variants (`SpCas9`, `SaCas9`, `SpCas9 HF1`,`HypaCas9` ,  and `IDT HiFi Cas9`) and were identified with the first 2 letters (`Sp`, `Sa`, `HF1`, `Hypa` and `IDT or HiFi`).
 
 Design of the oligos were as follows
+
 ![figure1](assets/GitHub_fig_TargetSequence.png)
 Fig1: Sequence features.
 
@@ -64,30 +65,28 @@ The html files are also available in other-files folder of this repo.
 
 For each library, separate processing script was generated and ran on respective files. For organization purpose, the files belonging to each library were kept in separate folders.
 
+The following scripts were written for analysis of the HTS data from a previous project on Cas12a. The scripts were adapted to Cas9 as reflexcted in the "2020_cas9-cas12amod".
+
 The processing commands were ran as follows:
 
 ```bash
 cd /work/GIF/arnstrm/Dipa/01-analysis
 ./link.sh
-mkdir -p KM01 KM03 KM04
-mv *-KMlib001-* ./KM01
+mkdir -p KM02 KM03 
+mv *-KMlib001-* ./KM02
 mv *-KMlib003-* ./KM03
-mv *-KMlib004-* ./KM04
-# process KM01
+
+# process KM02
 cd KM01
 for fq in *.fq; do
-  ../process_KM01.sh $fq;
+  ../process_KM02.sh $fq;
 done &>stdout.txt
 # process KM03
 cd ../KM03
 for fq in *.fq; do
   ../process_KM03.sh $fq;
 done &>stdout.txt
-# process KM04
-cd ../KM04
-for fq in *.fq; do
-  ../process_KM04.sh $fq;
-done &>stdout.txt
+
 ```
 
 These scripts generates 4 sets of files for every fastq file.
@@ -104,19 +103,19 @@ The next task is to combine these files and make unified file for each of the ab
 
 ```bash
 # cleanup files, putting them in different folders:
-for KM in KM01 KM03 KM04; do
+for KM in KM02 KM03 ; do
   cd $KM
   ../cleanup-process-files.sh
   cd ..
 done
 # process frequency table files
-for KM in KM01 KM03 KM04; do
+for KM in KM02 KM03; do
   cd $KM/frequency-table
   ../../makefull.sh
   cd ..
 done
 # process mismatch-summary table files
-for KM in KM01 KM03 KM04; do
+for KM in KM02 KM03; do
   cd $KM/mismatches-table
   ../../pad_and_merge-mismatches.sh
   cd ..
@@ -128,14 +127,12 @@ Final processing of files were done as follows:
 
 ```bash
 cd KM01/frequency-table
-../../final-process-KM01.sh
+../../final-process-KM02.sh
 cd -
 cd KM03/frequency-table
 ../../final-process-KM03.sh
 cd -
-cd KM04/frequency-table
-../../final-process-KM04.sh
-cd -
+
 ```
 The script generates following files:
 
@@ -152,6 +149,8 @@ The tables were then exported to excel and manipulated there.
 
 
 Commands used to generate summary tables are as follows:
+
+The following script is for KMlib001 - pLibrary PS4 for Cas12a. This was adapted for Cas9 as indicated in "2020_cas9-cas12amod".
 
 Process KM01
 
@@ -214,31 +213,3 @@ cut -f 2-8,24-38 KMlib003_proportions-total-counts-ge10.txt > As_KMlib003_nicked
 mv hd_* ../../KMlib001/Fig3/
 ```
 
-Process KM04
-```
-cd ../../KMlib004/
-mkdir Fig3
-cd Fig3
-cp ../KMlib004_proportions-total-counts-ge10.txt ./
-head -n 1 KMlib004_proportions-total-counts-ge10.txt |tr "\t" "\n" |nl
-cut -f 2-8,24-38 KMlib004_proportions-total-counts-ge10.txt > As_KMlib004_nicked_proportions_ge10.txt
-cut -f 2-5,39-41,57-71 KMlib004_proportions-total-counts-ge10.txt > Fn_KMlib004_nicked_proportions_ge10.txt
-cut -f 2-5,72-74,90-104 KMlib004_proportions-total-counts-ge10.txt > Lb_KMlib004_nicked_proportions_ge10.txt
-cd ../../KMlib004/Fig3/
-head -n 1 As_KMlib004_nicked_proportions_ge10.txt |tr "\t" "\n" |nl
-rm KMlib004_proportions-total-counts-ge10.txt
-for f in *.txt; do
-  awk 'BEGIN {FS=OFS="\t"}{print $1,$2,($5+$6+$7)/3,($8+$9+$10)/3,($11+$12+$13)/3,($14+$15+$16)/3,($17+$18+$19)/3,($20+$21+$22)/3}' $f > ${f%.*}_avg.txt;
-done
-echo -e "kmer\tMisMatches\tLb-KMlib004-1\tLb-KMlib004-3\tLb-KMlib004-5\tLb-KMlib004-7\tLb-KMlib004-9\tLb-KMlib004-11" > hd_lb
-echo -e "kmer\tMisMatches\tAs-KMlib004-1\tAs-KMlib004-3\tAs-KMlib004-5\tAs-KMlib004-7\tAs-KMlib004-9\tAs-KMlib004-11" > hd_as
-echo -e "kmer\tMisMatches\tFn-KMlib004-1\tFn-KMlib004-3\tFn-KMlib004-5\tFn-KMlib004-7\tFn-KMlib004-9\tFn-KMlib004-11" > hd_fn
-for f in *_avg.txt; do
-  awk 'NR>1' $f > $f.1;
-done
-cat hd_lb Lb_KMlib004_nicked_proportions_ge10_avg.txt.1 >> Lb_KMlib004_nicked_proportions_ge10_avg.txt
-cat hd_as As_KMlib004_nicked_proportions_ge10_avg.txt.1 >> As_KMlib004_nicked_proportions_ge10_avg.txt
-cat hd_fn Fn_KMlib004_nicked_proportions_ge10_avg.txt.1 >> Fn_KMlib004_nicked_proportions_ge10_avg.txt
-rm *.1
-mv hd_* ../../KMlib003/Fig3/
-```
