@@ -1,19 +1,18 @@
 # Generating the mis-match count table and positional nucleotide frequency matrix
 
-The input is a fastq file. The R2 reads (reverse reads) have a 20bp target sequences with 0 to 7 mismatches, with targets containing 2 or 3 mismatches maximally represented in the pool. The flanking sequence is constant which is trimmed before processing the target sequences. Once target sequences are extracted, the number of mismatches in the sequences are computed and the frequency of nucleotides at each position is calculated.
+The input is a fastq file. The R1 and R2 reads have a 20bp target sequences with 0 to 10 mismatches, with targets containing 2 to 4 mismatches maximally represented in the pool. The flanking sequence is constant which is trimmed before processing the target sequences. Once target sequences are extracted, the number of mismatches in the sequences are computed and the frequency of nucleotides at each position is calculated.
 
 ## Experiment
 
-Three different libraries were used in this experiment:
+Two different libraries were used in this experiment:
 
-1. pLibrary PS4 (KMlib001)
+1. pLibrary PS4 (KMlib002)
 2. pLibrary EMX1 (KMlib003)
-3. pLibrary CCR5 (KMlib004)
 
-Each of these libraries were tested with three orthologs of Cas12a (`FnCas12a`, `LbCas12a` and `AsCas12a`) and were identified with the first 2 letters (`Fn`, `Lb`, and `As`).
+Each of these libraries were tested with five Cas9 Variants (`SpCas9`, `SaCas9`, `SpCas9 HF1`,`HypaCas9` ,  and `IDT HiFi Cas9`) and were identified with the first 2 letters (`Sp`, `Sa`, `HF1`, `Hypa` and `IDT or HiFi`).
 
 Design of the oligos were as follows
-![figure1](assets/fig1-new.png)
+![figure1](assets/GitHub_fig_TargetSequence.png)
 Fig1: Sequence features.
 
 
@@ -25,10 +24,10 @@ Fig1: Sequence features.
 
 ## Data
 
-Data was securely `rsync`ed from the PI's [LSS](https://researchit.las.iastate.edu/large-scale-storage-lss) server to the Condo cluster. The files were organized based on library name and then Cas12a variant.
+Data was securely `rsync`ed from the PI's [LSS](https://researchit.las.iastate.edu/large-scale-storage-lss) server to the Condo cluster. The files were organized based on library name and then Cas9 variant.
 
 ```bash
-rsync --progress -rts /lss/research/sashital-lab/Karthik/DataAnalysis/Library/20190102_HTS_Cas12a/*fastq* ./
+rsync --progress -rts /../../*fastq* ./
 for fq in *.gz; do
 gunzip $fq;
 done
