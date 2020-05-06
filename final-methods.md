@@ -65,7 +65,7 @@ The html files are also available in other-files folder of this repo.
 
 For each library, separate processing script was generated and ran on respective files. For organization purpose, the files belonging to each library were kept in separate folders.
 
-The following scripts were written for analysis of the HTS data from a previous project on Cas12a. The scripts were adapted to Cas9 as reflexcted in the "2020_cas9-cas12amod".
+The following scripts were written for analysis of the HTS data from a previous project on Cas12a. The scripts were adapted to Cas9 as reflexcted in the "Cas9_Scripts(Cas9_specificity/Cas9_Scripts/)".
 
 The processing commands were ran as follows:
 
@@ -150,7 +150,7 @@ The tables were then exported to excel and manipulated there.
 
 Commands used to generate summary tables are as follows:
 
-The following script is for KMlib001 - pLibrary PS4 for Cas12a. This was adapted for Cas9 as indicated in "2020_cas9-cas12amod".
+The following script is for KMlib001 - pLibrary PS4 for Cas12a. This was adapted for Cas9 as indicated in "Cas9_Scripts(Cas9_specificity/Cas9_Scripts/)".
 
 Process KM01
 
